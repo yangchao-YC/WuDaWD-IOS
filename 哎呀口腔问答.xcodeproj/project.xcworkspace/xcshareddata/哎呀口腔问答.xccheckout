@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7B911F70-E29D-4E44-8B4D-2646A4E51B3F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>哎呀口腔问答</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>399D763B-2C33-4D02-978D-D4DB7F1BA297</key>
+		<string>https://github.com/yangchao-Bei/WuDaWD-IOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>哎呀口腔问答.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>399D763B-2C33-4D02-978D-D4DB7F1BA297</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yangchao-Bei/WuDaWD-IOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>399D763B-2C33-4D02-978D-D4DB7F1BA297</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>399D763B-2C33-4D02-978D-D4DB7F1BA297</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WuDaWD-IOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

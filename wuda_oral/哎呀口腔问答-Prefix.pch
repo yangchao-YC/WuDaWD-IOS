@@ -1,0 +1,52 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define ALERT_POINTS (IS_IPHONE_5 ? 115 :0 )
+
+
+
+//上传所需参数
+#define USERNAME @"&username="
+#define PASSWORD @"&password="
+#define EMAIL @"&email="
+#define INTEGRALS @"&integral="
+//登录
+
+#define LOGIN @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&login=on"
+
+//忘记密码
+#define PWD @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&registered=modify"
+
+//注册用户
+#define REGIST @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&registered=on"
+
+//上传积分
+#define UPLOAD @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&postintegral=on"
+
+//积分排行
+#define RANK @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&getIntegralList=on"
+
+//个人排名
+#define INTEGRAL @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&rankings=on"
+
+//商品列表
+#define GOOD @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&list=on"
+
+//积分兑换
+#define REDEEM @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&prize=on"
+
+
+#endif
