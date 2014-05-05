@@ -111,6 +111,7 @@
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:15.0f];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.backgroundColor = [UIColor clearColor];
     [self.bg_view addSubview:self.titleLabel];
     
     self.contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(33.0f, 55.0f, backgroundImage.size.width - 60.0f, 30.0f)];
@@ -119,6 +120,7 @@
     self.contentLabel.textColor = [UIColor whiteColor];
     self.contentLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:12.0f];
     self.contentLabel.textAlignment = NSTextAlignmentLeft;
+    self.contentLabel.backgroundColor = [UIColor clearColor];
     [self.bg_view addSubview:self.contentLabel];
     
     
@@ -148,6 +150,8 @@
     self.money1.textColor = [UIColor whiteColor];
     self.money1.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:10.0f];
     self.money1.textAlignment = NSTextAlignmentLeft;
+    self.money1.backgroundColor = [UIColor clearColor];
+
     [self.bg_view addSubview:self.money1];
     
     //需消耗的积分
@@ -157,6 +161,7 @@
     self.moneyLabel.textColor = [UIColor whiteColor];
     self.moneyLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.moneyLabel.textAlignment = NSTextAlignmentCenter;
+    self.moneyLabel.backgroundColor = [UIColor clearColor];
     [self.bg_view addSubview:self.moneyLabel];
     
     
@@ -167,6 +172,8 @@
     self.money2.textColor = [UIColor whiteColor];
     self.money2.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:10.0f];
     self.money2.textAlignment = NSTextAlignmentLeft;
+    self.money2.backgroundColor = [UIColor clearColor];
+
     [self.bg_view addSubview:self.money2];
     
     //拥有积分提示文字1
@@ -176,6 +183,7 @@
     self.possessLeft.textColor = [UIColor whiteColor];
     self.possessLeft.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:10.0f];
     self.possessLeft.textAlignment = NSTextAlignmentLeft;
+    self.possessLeft.backgroundColor = [UIColor clearColor];
     [self.bg_view addSubview:self.possessLeft];
     
     //拥有的积分
@@ -185,6 +193,8 @@
     self.possess.textColor = [UIColor whiteColor];
     self.possess.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.possess.textAlignment = NSTextAlignmentCenter;
+    self.possess.backgroundColor = [UIColor clearColor];
+
     [self.bg_view addSubview:self.possess];
     
     //拥有积分提示文字2
@@ -194,6 +204,8 @@
     self.possessRight.textColor = [UIColor whiteColor];
     self.possessRight.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:10.0f];
     self.possessRight.textAlignment = NSTextAlignmentLeft;
+    self.possessRight.backgroundColor = [UIColor clearColor];
+
     [self.bg_view addSubview:self.possessRight];
     
     
@@ -204,6 +216,8 @@
     self.remainLeft.textColor = [UIColor whiteColor];
     self.remainLeft.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:10.0f];
     self.remainLeft.textAlignment = NSTextAlignmentLeft;
+    self.remainLeft.backgroundColor = [UIColor clearColor];
+
     [self.bg_view addSubview:self.remainLeft];
     
     
@@ -215,6 +229,8 @@
     self.remain.textColor = [UIColor whiteColor];
     self.remain.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:12.0f];
     self.remain.textAlignment = NSTextAlignmentLeft;
+    self.remain.backgroundColor = [UIColor clearColor];
+
     [self.bg_view addSubview:self.remain];
     
     

@@ -46,6 +46,7 @@
     titleLabel.textColor = [UIColor whiteColor];
     titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:15.0f];
     titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.backgroundColor = [UIColor clearColor];
     [self.bg_view addSubview:titleLabel];
     if (key == 1)
     {
@@ -55,6 +56,7 @@
     contentLabel.textColor = [UIColor whiteColor];
     contentLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:12.0f];
     contentLabel.textAlignment = NSTextAlignmentCenter;
+    contentLabel.backgroundColor = [UIColor clearColor];
     [self.bg_view addSubview:contentLabel];
     
         //确定退出
@@ -90,6 +92,8 @@
         contentLabel.textColor = [UIColor whiteColor];
         contentLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:12.0f];
         contentLabel.textAlignment = NSTextAlignmentCenter;
+        contentLabel.backgroundColor = [UIColor clearColor];
+
         [self.bg_view addSubview:contentLabel];
         
         //确定

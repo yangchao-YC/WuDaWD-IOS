@@ -103,6 +103,12 @@ id           商品id
     self.Text_name.delegate = self;
     
     
+    self.Text_Pwd.backgroundColor = [UIColor clearColor];
+    self.Text_Regist_email.backgroundColor = [UIColor clearColor];
+    self.Text_Regist_name.backgroundColor = [UIColor clearColor];
+    self.Text_Regist_pwd1.backgroundColor = [UIColor clearColor];
+    self.Text_Regist_pwd2.backgroundColor = [UIColor clearColor];
+    self.Text_name.backgroundColor = [UIColor clearColor];
     
     //设置提示文字颜色
     UIColor *color = [UIColor whiteColor];

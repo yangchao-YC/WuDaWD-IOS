@@ -41,7 +41,7 @@
 
 #import "ScoreViewController.h"
 #import "ScoreRankCell.h"
-#import <ShareSDK/ShareSDK.h>
+#import "UMSocial.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "UIViewController+HUD.h"
@@ -265,126 +265,6 @@
 
 - (void)initScoreView
 {
-    /*
-     UIView *viewLeft = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320.0f, 385.0f)];
-     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:viewLeft.frame];
-     backgroundImageView.image = [UIImage imageNamed:@"score_tag.png"];
-     [viewLeft addSubview:backgroundImageView];
-     
-     ///
-     UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(70.0f, 90.0f, 100.0f, 30.0f)];
-     label1.text = @"您的成绩:";
-     label1.font = [UIFont boldSystemFontOfSize:15.0f];
-     label1.textColor = [UIColor whiteColor];
-     [viewLeft addSubview:label1];
-     
-     UILabel *labelScore = [[UILabel alloc] initWithFrame:CGRectMake(0, 120.0f, 320.0f, 70.0f)];
-     labelScore.text = [NSString stringWithFormat:@"%d 分",[self.totleScore intValue]];
-     labelScore.font = [UIFont boldSystemFontOfSize:45.0f];
-     labelScore.textColor = [UIColor whiteColor];
-     labelScore.textAlignment = NSTextAlignmentCenter;
-     [viewLeft addSubview:labelScore];
-     
-     UIImageView *redLineImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 190.0f, 320.0f, 90.0f)];
-     redLineImageView.image = [UIImage imageNamed:@"score_tag_redline.png"];
-     [viewLeft addSubview:redLineImageView];
-     
-     UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 200.0f, 320.0f, 30.0f)];
-     label2.text = @"恭喜您已成为健康达人!";
-     label2.font = [UIFont boldSystemFontOfSize:15.0f];
-     label2.textColor = [UIColor whiteColor];
-     label2.textAlignment = NSTextAlignmentCenter;
-     [viewLeft addSubview:label2];
-     
-     
-     UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(65.0f, 245.0f, 100.0f, 10.0f)];
-     label3.text = @"此次可获积分为:";
-     label3.font = [UIFont boldSystemFontOfSize:9.0f];
-     label3.textColor = [UIColor whiteColor];
-     label3.textAlignment = NSTextAlignmentRight;
-     [viewLeft addSubview:label3];
-     
-     UILabel *label4 = [[UILabel alloc] initWithFrame:CGRectMake(65.0f, 256.0f, 100.0f, 10.0f)];
-     label4.text = @"累积总积分为:";
-     label4.font = [UIFont boldSystemFontOfSize:9.0f];
-     label4.textColor = [UIColor whiteColor];
-     label4.textAlignment = NSTextAlignmentRight;
-     [viewLeft addSubview:label4];
-     
-     
-     UILabel *labelCurrentScore = [[UILabel alloc] initWithFrame:CGRectMake(170.0f, 245.0f, 100.0f, 10.0f)];
-     labelCurrentScore.text = @"690健康币";
-     labelCurrentScore.font = [UIFont boldSystemFontOfSize:9.0f];
-     labelCurrentScore.textColor = [UIColor whiteColor];
-     [viewLeft addSubview:labelCurrentScore];
-     
-     UILabel *labelTotleScore = [[UILabel alloc] initWithFrame:CGRectMake(170.0f, 256.0f, 100.0f, 10.0f)];
-     labelTotleScore.text = @"1700健康币";
-     labelTotleScore.font = [UIFont boldSystemFontOfSize:9.0f];
-     labelTotleScore.textColor = [UIColor whiteColor];
-     [viewLeft addSubview:labelTotleScore];
-     
-     
-     UIImageView *giftImageView = [[UIImageView alloc] initWithFrame:CGRectMake(137.5f, 270.0f, 45.0f, 45.0f)];
-     giftImageView.image = [UIImage imageNamed:@"score_gift.png"];
-     [viewLeft addSubview:giftImageView];
-     
-     UILabel *labelGift = [[UILabel alloc] initWithFrame:CGRectMake(110.0f, 285.0f, 100.0f, 40.0f)];
-     labelGift.text = @"   健康币可到积分 \n 商城兑换丰厚礼品";
-     labelGift.font = [UIFont boldSystemFontOfSize:10.0f];
-     labelGift.numberOfLines = 2;
-     labelGift.textColor = [UIColor redColor];
-     labelGift.textAlignment = NSTextAlignmentCenter;
-     [viewLeft addSubview:labelGift];
-     ///
-     [self.scoreScrollView addSubview:viewLeft];
-     
-     
-     UIView *viewRight = [[UIView alloc] initWithFrame:CGRectMake(320.0f, 0, 320.0f, 385.0f)];
-     backgroundImageView = [[UIImageView alloc] initWithFrame:viewLeft.frame];
-     backgroundImageView.image = [UIImage imageNamed:@"score_tag.png"];
-     [viewRight addSubview:backgroundImageView];
-     ///
-     UILabel *label5 = [[UILabel alloc] initWithFrame:CGRectMake(0, 80.0f, 320.0f, 30.0f)];
-     label5.text = @"积分排行榜";
-     label5.font = [UIFont boldSystemFontOfSize:25.0f];
-     label5.textColor = [UIColor whiteColor];
-     label5.textAlignment = NSTextAlignmentCenter;
-     [viewRight addSubview:label5];
-     
-     UILabel *label6 = [[UILabel alloc] initWithFrame:CGRectMake(0, 110.0f, 320.0f, 30.0f)];
-     label6.text = @"您的积分排名: 第4名";
-     label6.font = [UIFont boldSystemFontOfSize:18.0f];
-     label6.textColor = [UIColor whiteColor];
-     label6.textAlignment = NSTextAlignmentCenter;
-     [viewRight addSubview:label6];
-     
-     UILabel *label7 = [[UILabel alloc] initWithFrame:CGRectMake(0, 280.0f, 320.0f, 30.0f)];
-     label7.text = @"还需要加油哟!";
-     label7.font = [UIFont boldSystemFontOfSize:20.0f];
-     label7.textColor = [UIColor whiteColor];
-     label7.textAlignment = NSTextAlignmentCenter;
-     [viewRight addSubview:label7];
-     
-     self.rankingTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 140.0f, 320.0f, 140.0f) style:UITableViewStylePlain];
-     self.rankingTableView.dataSource = self;
-     self.rankingTableView.delegate = self;
-     self.rankingTableView.backgroundColor = [UIColor clearColor];
-     self.rankingTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-     
-     [viewRight addSubview:self.rankingTableView];
-     [self.rankingTableView reloadData];
-     ///
-     [self.scoreScrollView addSubview:viewRight];
-     
-     //self.scoreScrollView.contentSize = CGSizeMake(640.0f, 385.0f);
-     self.scoreScrollView.contentSize = CGSizeMake(320.0f, 385.0f);
-     self.scoreScrollView.pagingEnabled = YES;
-     self.scoreScrollView.bounces = NO;
-     
-     self.scorePageControl.currentPage = 0;
-     
-     */
     self.scoreScrollView.contentSize = CGSizeMake(640.0f, 385.0f);
     self.scoreScrollView.pagingEnabled = YES;
     self.scoreScrollView.bounces = NO;
@@ -465,33 +345,15 @@
 
 -(void)share:(UIImage *)image
 {
-    // NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK"  ofType:@"jpg"];
     
-    //构造分享内容
-    id<ISSContent> publishContent = [ShareSDK content:@"哎呀”口腔问答采用问答的游戏方式，配以幽默诙谐的背景和卡通元素，以通俗易懂的问答形式向广大用户推介了口腔各种常见病的医疗保健知识。http://www.whuss.com/"
-                                       defaultContent:@"默认分享内容，没内容时显示"
-                                                image:[ShareSDK jpegImageWithImage:image quality:0.5]//[ShareSDK imageWithPath:imagePath]
-                                                title:@"哎呀口腔问答"
-                                                  url:@"http://www.whuss.com/"
-                                          description:@"哎呀”口腔问答采用问答的游戏方式，配以幽默诙谐的背景和卡通元素，以通俗易懂的问答形式向广大用户推介了口腔各种常见病的医疗保健知识。"
-                                            mediaType:SSPublishContentMediaTypeNews];//分享类型：文本，图片，视频，微信使用
     
-    [ShareSDK showShareActionSheet:nil
-                         shareList:nil
-                           content:publishContent
-                     statusBarTips:YES
-                       authOptions:nil
-                      shareOptions: nil
-                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
-                                if (state == SSResponseStateSuccess)
-                                {
-                                    NSLog(@"分享成功");
-                                }
-                                else if (state == SSResponseStateFail)
-                                {
-                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
-                                }
-                            }];
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"52e8a77156240ba07808a38a"
+                                      shareText:@"哎呀”口腔问答采用问答的游戏方式，配以幽默诙谐的背景和卡通元素，以通俗易懂的问答形式向广大用户推介了口腔各种常见病的医疗保健知识。http://www.whuss.com/"
+                                     shareImage:image
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToTencent,UMShareToEmail,UMShareToSms,nil]
+                                       delegate:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning
