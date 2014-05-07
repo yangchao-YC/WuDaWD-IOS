@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 
 #import "UMSocial.h"
+
+#import "WXApiObject.h"
+#import "UMSocialWechatHandler.h"
+
 @implementation AppDelegate
 
 @synthesize userLogin;
@@ -18,7 +22,7 @@
     
     [UMSocialData setAppKey:@"52e8a77156240ba07808a38a"];
 
-
+    [UMSocialWechatHandler setWXAppId:@"wxd9a39c7122aa6516" url:@"http://www.whuss.com/"];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     

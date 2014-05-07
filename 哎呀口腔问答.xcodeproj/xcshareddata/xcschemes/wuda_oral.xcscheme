@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3BC3E4D6185C123D008ADAE6"
-               BuildableName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.app"
-               BlueprintName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;"
-               ReferencedContainer = "container:&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.xcodeproj">
+               BuildableName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.app"
+               BlueprintName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;"
+               ReferencedContainer = "container:&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3BC3E4FA185C123E008ADAE6"
-               BuildableName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;Tests.xctest"
-               BlueprintName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;Tests"
-               ReferencedContainer = "container:&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.xcodeproj">
+               BuildableName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;Tests.xctest"
+               BlueprintName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;Tests"
+               ReferencedContainer = "container:&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BC3E4D6185C123D008ADAE6"
-            BuildableName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.app"
-            BlueprintName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;"
-            ReferencedContainer = "container:&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.xcodeproj">
+            BuildableName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.app"
+            BlueprintName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;"
+            ReferencedContainer = "container:&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BC3E4D6185C123D008ADAE6"
-            BuildableName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.app"
-            BlueprintName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;"
-            ReferencedContainer = "container:&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.xcodeproj">
+            BuildableName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.app"
+            BlueprintName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;"
+            ReferencedContainer = "container:&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BC3E4D6185C123D008ADAE6"
-            BuildableName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.app"
-            BlueprintName = "&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;"
-            ReferencedContainer = "container:&#21710;&#21568;&#21475;&#33108;&#38382;&#31572;.xcodeproj">
+            BuildableName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.app"
+            BlueprintName = "&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;"
+            ReferencedContainer = "container:&#x54ce;&#x5440;&#x53e3;&#x8154;&#x95ee;&#x7b54;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -90,7 +90,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Distribution"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
