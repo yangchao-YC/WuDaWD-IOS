@@ -113,7 +113,7 @@
     self.rightCount = 0;
     self.questionsArray = [NSMutableArray array];
     FMDatabase *db = [FMDatabase databaseWithPath:[DB_PATH stringByAppendingPathComponent:DB_NAME]];
-    NSString *sqlStr = @"SELECT * FROM question ORDER BY RANDOM() limit 100";
+    NSString *sqlStr = @"SELECT * FROM question ORDER BY RANDOM() limit 20";
     if ([db open])
     {
         FMResultSet *rs = [db executeQuery:sqlStr];

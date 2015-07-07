@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ARD-2L-neL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ARD-2L-neL">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -479,7 +479,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="LwY-CW-KyI">
-                                <rect key="frame" x="44" y="0.0" width="240" height="280"/>
+                                <rect key="frame" x="320" y="0.0" width="240" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login.png" id="oZV-ti-WNl">
@@ -533,7 +533,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" id="Ayl-hV-ygm">
-                                <rect key="frame" x="44" y="0.0" width="240" height="360"/>
+                                <rect key="frame" x="320" y="0.0" width="240" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="regist_bg.png" id="3Mr-tS-rJh">
@@ -596,6 +596,69 @@
                                     </button>
                                 </subviews>
                             </view>
+                            <view contentMode="scaleToFill" id="uGS-aD-Unl">
+                                <rect key="frame" x="44" y="0.0" width="240" height="360"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="regist_two_bg.png" id="pp2-P8-6eA">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="360"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="年龄" minimumFontSize="17" id="pRO-OD-amj">
+                                        <rect key="frame" x="22" y="158" width="205" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="hv4-9b-Tp4" id="0gp-0f-QWb"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="性别" minimumFontSize="17" id="KgK-zA-xAO">
+                                        <rect key="frame" x="22" y="191" width="205" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="hv4-9b-Tp4" id="TAq-qz-ahX"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="职业" minimumFontSize="17" id="Kcb-fV-Tvg">
+                                        <rect key="frame" x="22" y="224" width="205" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="hv4-9b-Tp4" id="jQG-bO-K4p"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6rp-Nj-o3l">
+                                        <rect key="frame" x="83" y="325" width="75" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="立即注册" backgroundImage="btn_green.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="btn_green.png"/>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mlu-Vf-yST">
+                                        <rect key="frame" x="83" y="325" width="75" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="确定" backgroundImage="btn_green.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="btn_green.png"/>
+                                        <connections>
+                                            <action selector="BtnClick:" destination="hv4-9b-Tp4" eventType="touchUpInside" id="mBz-y3-LFw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                             <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" id="3P0-yH-7Pb">
                                 <rect key="frame" x="66" y="158" width="205" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -614,14 +677,19 @@
                         <outlet property="Button_Regist" destination="w8V-q1-yPi" id="beN-lw-sJS"/>
                         <outlet property="Button_Regist_regist" destination="7eS-pc-8dl" id="hf5-5e-xf6"/>
                         <outlet property="Image_Regist_imageBg" destination="3Mr-tS-rJh" id="d47-qn-5jO"/>
+                        <outlet property="Text_Age" destination="pRO-OD-amj" id="OLj-AD-4un"/>
                         <outlet property="Text_Pwd" destination="KAu-po-ct8" id="ALv-Om-eds"/>
                         <outlet property="Text_Regist_email" destination="ele-GC-gVj" id="Cbv-UQ-kxf"/>
                         <outlet property="Text_Regist_name" destination="rwT-lg-TIw" id="D4w-QJ-WNN"/>
                         <outlet property="Text_Regist_pwd1" destination="DSS-PY-D0j" id="kV1-Qb-7mc"/>
                         <outlet property="Text_Regist_pwd2" destination="kMB-5Y-NJP" id="hxA-GE-jxW"/>
+                        <outlet property="Text_Word" destination="Kcb-fV-Tvg" id="8FB-gL-G6m"/>
                         <outlet property="Text_name" destination="3P0-yH-7Pb" id="y2V-B4-1Ti"/>
+                        <outlet property="Text_sex" destination="KgK-zA-xAO" id="AKv-Nr-iMg"/>
                         <outlet property="View_Login" destination="LwY-CW-KyI" id="1qu-GC-CHX"/>
                         <outlet property="View_Regist" destination="Ayl-hV-ygm" id="yDY-vw-FoT"/>
+                        <outlet property="two_ok_Btn" destination="Mlu-Vf-yST" id="8Ar-xV-rKB"/>
+                        <outlet property="two_zhuce_Btn" destination="6rp-Nj-o3l" id="f80-xJ-5lB"/>
                         <segue destination="APg-ob-VRm" kind="push" identifier="score" id="TnS-Ea-MC8"/>
                     </connections>
                 </viewController>
@@ -803,6 +871,7 @@
         <image name="points_btn_back.png" width="111" height="32"/>
         <image name="points_cell_button.png" width="56" height="17"/>
         <image name="regist_bg.png" width="240" height="359"/>
+        <image name="regist_two_bg.png" width="240" height="360"/>
         <image name="score_star.png" width="12" height="12"/>
         <image name="store_buttom.png" width="320" height="67"/>
         <image name="store_top.png" width="320" height="117"/>
@@ -816,8 +885,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="j9N-hg-LcR"/>
         <segue reference="bdr-xn-6rf"/>
-        <segue reference="5UK-xL-pWC"/>
+        <segue reference="TnS-Ea-MC8"/>
         <segue reference="etc-12-sJ4"/>
-        <segue reference="Na9-rg-ite"/>
+        <segue reference="5UK-xL-pWC"/>
     </inferredMetricsTieBreakers>
 </document>

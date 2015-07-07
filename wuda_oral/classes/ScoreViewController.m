@@ -351,7 +351,7 @@
                                          appKey:@"52e8a77156240ba07808a38a"
                                       shareText:@"哎呀”口腔问答采用问答的游戏方式，配以幽默诙谐的背景和卡通元素，以通俗易懂的问答形式向广大用户推介了口腔各种常见病的医疗保健知识。http://www.whuss.com/"
                                      shareImage:image
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToTencent,UMShareToEmail,UMShareToSms,UMShareToWechatSession,UMShareToWechatTimeline,nil]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToTencent,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToQzone,nil]
                                        delegate:nil];
     
 }

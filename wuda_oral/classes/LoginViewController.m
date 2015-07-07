@@ -38,6 +38,9 @@ id           商品id
 //返回参数：errorid ，1 为修改成功，2为修改失败
 
 
+//注册信息      MESSAGE
+//String url = MESSAGE + 性别 + "&old="+年龄+"&position="+职业 +"&lang=en";
+
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
@@ -131,10 +134,24 @@ id           商品id
     self.Text_Regist_pwd2.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Text_name.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     
+    self.Text_Age.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    self.Text_sex.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    self.Text_Word.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    
+    self.two_ok_Btn.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    self.two_zhuce_Btn.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    
+    self.Text_Age.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"年龄" attributes:@{NSForegroundColorAttributeName: color}];
+    self.Text_sex.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"性别" attributes:@{NSForegroundColorAttributeName: color}];
+    self.Text_Word.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"职业" attributes:@{NSForegroundColorAttributeName: color}];
+    
+    
     self.Button_Pwd.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Button_Login.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Button_Regist.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Button_Regist_regist.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    
+    
     
     
 }

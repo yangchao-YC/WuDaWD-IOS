@@ -23,30 +23,37 @@
 #define PASSWORD @"&password="
 #define EMAIL @"&email="
 #define INTEGRALS @"&integral="
-//登录
 
-#define LOGIN @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&login=on"
+
+#define DATE_URL @"http://mobile.ycpwh.cn:80/"
+
+
+//登录
+#define LOGIN [DATE_URL stringByAppendingString:@"index.php?option=com_content&login=on"]
 
 //忘记密码
-#define PWD @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&registered=modify"
+#define PWD [DATE_URL stringByAppendingString:@"index.php?option=com_content&registered=modify"]
 
 //注册用户
-#define REGIST @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&registered=on"
+#define REGIST [DATE_URL stringByAppendingString:@"index.php?option=com_content&registered=on"]
 
 //上传积分
-#define UPLOAD @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&postintegral=on"
+#define UPLOAD [DATE_URL stringByAppendingString:@"index.php?option=com_content&postintegral=on"]
 
 //积分排行
-#define RANK @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&getIntegralList=on"
+#define RANK [DATE_URL stringByAppendingString:@"index.php?option=com_content&getIntegralList=on"]
 
 //个人排名
-#define INTEGRAL @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&rankings=on"
+#define INTEGRAL [DATE_URL stringByAppendingString:@"index.php?option=com_content&rankings=on"]
 
 //商品列表
-#define GOOD @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&list=on"
+#define GOOD [DATE_URL stringByAppendingString:@"index.php?option=com_content&list=on"]
 
 //积分兑换
-#define REDEEM @"http://121.199.29.181/demo/wudawenda/index.php?option=com_content&prize=on"
+#define REDEEM [DATE_URL stringByAppendingString:@"index.php?option=com_content&prize=on"]
 
+
+//注册信息
+#define MESSAGE [DATE_URL stringByAppendingString:@"index.php?option=com_content&ttrue=4&sex="]
 
 #endif
