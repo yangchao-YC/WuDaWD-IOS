@@ -37,6 +37,7 @@
 //返回参数：errorid ，1 为修改成功，2为修改失败
 #import "AnswerViewController.h"
 #import "AnswerCell.h"
+#import "UMSocial.h"
 #import "FMDatabase.h"
 #import "CustomAlertView.h"
 @interface AnswerViewController ()<UITableViewDataSource,UITableViewDelegate,CustomAlertViewDelegate>
@@ -228,13 +229,18 @@
 }
 
 - (IBAction)exitAnswer:(id)sender {
+    /*
     CustomAlertView *alertView = [[CustomAlertView alloc] initWithView:self.view
                                                                  title:@"退出游戏"
                                                                content:@"您是否真的要退出游戏，这样可能获得不了更多的积分哟！"
                                                                    key:1];
     alertView.clickDelegate = self;
     [alertView show];
+     */
     
+    
+    
+    [self Social];
 }
 
 - (void)CustomClickButton:(UIButton *)button alertView:(CustomAlertView *)alertView
@@ -260,14 +266,17 @@
         cell.imageView_selected.hidden = YES;
         
         int index = [[[self.questionsArray objectAtIndex:self.questionIndex] objectForKey:@"rightAnswerIndex"] intValue];
+        
+        NSLog(@"我是第几题   %d    %@",index,[[[self.questionsArray objectAtIndex:self.questionIndex] objectForKey:@"answers"] objectAtIndex:index]);
+        
         //判断对错
         if (index == indexPath.row) {
             self.rightCount += 1;
-            [self judge:0];
+            [self judge:0 Answer:nil];
         }
         else
         {
-            [self judge:1];
+            [self judge:1 Answer:[[[self.questionsArray objectAtIndex:self.questionIndex] objectForKey:@"answers"] objectAtIndex:index]];
         }
     }
     
@@ -287,20 +296,45 @@
     
 }
 
--(void)judge:(int)key
+-(void)judge:(int)key Answer:(NSString *)answer
 {
     if (key == 0) {
-        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"恭喜您答对了" content:nil key:2];
+        CustomAlertView *alertView = [[CustomAlertView alloc] initWithView:self.view
+                                                                     title:@"恭喜您答对了"
+                                                                   content:@"正确"
+                                                                       key:2];
         alertView.clickDelegate = self;
         [alertView show];
+        
     }
     else
     {
-        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"很遗憾您答错了" content:nil key:2];
+        NSString *tishi = [NSString stringWithFormat:@"正确答案是:%@",answer];
+        
+        CustomAlertView *alertView = [[CustomAlertView alloc] initWithView:self.view
+                                                                     title:@"很遗憾您答错了"
+                                                                   content:tishi
+                                                                       key:4];
         alertView.clickDelegate = self;
         [alertView show];
     }
 }
+
+
+
+-(void)Social
+{
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"52e8a77156240ba07808a38a"
+                                      shareText:@"哎呀”口腔问答采用问答的游戏方式，配以幽默诙谐的背景和卡通元素，以通俗易懂的问答形式向广大用户推介了口腔各种常见病的医疗保健知识。http://www.whuss.com/"
+                                     shareImage:nil
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToTencent,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToQQ,UMShareToQzone,nil]
+                                       delegate:nil];
+}
+
+
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     UIViewController *destinationController = segue.destinationViewController;

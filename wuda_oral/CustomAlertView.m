@@ -110,16 +110,46 @@
     }
     else
     {
-        //确定
+        NSLog(@"我是key%d",key);
+        if(key == 4)
+        {
+        UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(40.0f, 55.0f, backgroundImage.size.width - 80.0f, 30.0f)];
+        contentLabel.text = content;
+        contentLabel.numberOfLines = 2;
+        contentLabel.textColor = [UIColor whiteColor];
+        contentLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:12.0f];
+        contentLabel.textAlignment = NSTextAlignmentCenter;
+        contentLabel.backgroundColor = [UIColor clearColor];
+        [self.bg_view addSubview:contentLabel];
+        }
+        
+        
+        //确定退出
+        UIButton *exitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        exitBtn.frame = CGRectMake(155.0f, 90.0f, 75.0f, 25.0f);
+        [exitBtn setBackgroundImage:[UIImage imageNamed:@"btn_bg_blue.png"] forState:UIControlStateNormal];
+        [exitBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [exitBtn setTitle:@"以后再玩" forState:UIControlStateNormal];
+        exitBtn.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:12.0f];
+        [exitBtn setAdjustsImageWhenHighlighted:NO];
+        exitBtn.tag = 0;
+        [self.bg_view addSubview:exitBtn];
+        
+        
+        
+        //继续游戏
         UIButton *goonBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        goonBtn.frame = CGRectMake((backgroundImage.size.width/2)-37.0f, 90.0f, 75.0f, 25.0f);
-        [goonBtn setBackgroundImage:[UIImage imageNamed:@"btn_bg_blue.png"] forState:UIControlStateNormal];
-        [goonBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [goonBtn setTitle:@"确定" forState:UIControlStateNormal];
+        goonBtn.frame = CGRectMake(55.0f, 90.0f, 75.0f, 25.0f);
+        [goonBtn setBackgroundImage:[UIImage imageNamed:@"btn_green.png"] forState:UIControlStateNormal];
         [goonBtn setAdjustsImageWhenHighlighted:NO];
+        [goonBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [goonBtn setTitle:@"继续答题" forState:UIControlStateNormal];
         goonBtn.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:12.0f];
         goonBtn.tag = 1;
         [self.bg_view addSubview:goonBtn];
+        
+        
+         
     }
     
     return self;

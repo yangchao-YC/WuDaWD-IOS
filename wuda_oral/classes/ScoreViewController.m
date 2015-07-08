@@ -106,7 +106,7 @@
 -(void)UserLogin
 {
     if (userName == NULL) {
-        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"出问题啦!" content:@"您还没有登录，请点击确定登录。" key:1];
+        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"您还没有登陆!" content:@"登陆后才能得到积分!" key:1];
         alertView.clickDelegate = self;
         [alertView show];
     }
