@@ -367,7 +367,6 @@ id           商品id
 {
     [self removeHUDInfo];
     
-   // NSDictionary *article = [self.articles objectAtIndex:0];
     NSString *errorid = [NSString stringWithFormat:@"%@",[self.articles objectForKey:@"errorid"]];
     if ([errorid isEqualToString:@"1"]) {
         AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];

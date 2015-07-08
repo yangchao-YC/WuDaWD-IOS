@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E68B4AB3-442D-43D8-85F5-EFDDEE958D2A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>哎呀口腔问答</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F539D08DA3D13FC83A1791031C8308CF4353E0F2</key>
 		<string>https://github.com/yangchao-YC/WuDaWD-IOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>哎呀口腔问答.xcodeproj/project.xcworkspace</string>
+	<string>哎呀口腔问答.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F539D08DA3D13FC83A1791031C8308CF4353E0F2</key>

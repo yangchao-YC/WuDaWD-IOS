@@ -237,9 +237,6 @@
     alertView.clickDelegate = self;
     [alertView show];
      */
-    
-    
-    
     [self Social];
 }
 
@@ -266,8 +263,6 @@
         cell.imageView_selected.hidden = YES;
         
         int index = [[[self.questionsArray objectAtIndex:self.questionIndex] objectForKey:@"rightAnswerIndex"] intValue];
-        
-        NSLog(@"我是第几题   %d    %@",index,[[[self.questionsArray objectAtIndex:self.questionIndex] objectForKey:@"answers"] objectAtIndex:index]);
         
         //判断对错
         if (index == indexPath.row) {
