@@ -479,7 +479,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="LwY-CW-KyI">
-                                <rect key="frame" x="320" y="0.0" width="240" height="280"/>
+                                <rect key="frame" x="44" y="0.0" width="240" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login.png" id="oZV-ti-WNl">
@@ -533,7 +533,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" id="Ayl-hV-ygm">
-                                <rect key="frame" x="320" y="0.0" width="240" height="360"/>
+                                <rect key="frame" x="44" y="0.0" width="240" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="regist_bg.png" id="3Mr-tS-rJh">
@@ -596,7 +596,7 @@
                                     </button>
                                 </subviews>
                             </view>
-                            <view contentMode="scaleToFill" id="uGS-aD-Unl">
+                            <view hidden="YES" contentMode="scaleToFill" id="uGS-aD-Unl">
                                 <rect key="frame" x="44" y="0.0" width="240" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -604,12 +604,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="360"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="年龄" minimumFontSize="17" id="pRO-OD-amj">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="年龄" minimumFontSize="17" id="pRO-OD-amj">
                                         <rect key="frame" x="22" y="158" width="205" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                         <connections>
                                             <outlet property="delegate" destination="hv4-9b-Tp4" id="0gp-0f-QWb"/>
                                         </connections>
@@ -624,6 +624,16 @@
                                             <outlet property="delegate" destination="hv4-9b-Tp4" id="TAq-qz-ahX"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wch-It-Jyy">
+                                        <rect key="frame" x="22" y="191" width="205" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="BtnClick:" destination="hv4-9b-Tp4" eventType="touchUpInside" id="uUl-2s-7px"/>
+                                        </connections>
+                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="职业" minimumFontSize="17" id="Kcb-fV-Tvg">
                                         <rect key="frame" x="22" y="224" width="205" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -634,7 +644,17 @@
                                             <outlet property="delegate" destination="hv4-9b-Tp4" id="jQG-bO-K4p"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6rp-Nj-o3l">
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ecD-FX-ztE">
+                                        <rect key="frame" x="22" y="224" width="205" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="BtnClick:" destination="hv4-9b-Tp4" eventType="touchUpInside" id="sl8-rs-KZV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6rp-Nj-o3l">
                                         <rect key="frame" x="83" y="325" width="75" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -643,6 +663,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted" backgroundImage="btn_green.png"/>
+                                        <connections>
+                                            <action selector="BtnClick:" destination="hv4-9b-Tp4" eventType="touchUpInside" id="VRK-oz-fLw"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mlu-Vf-yST">
                                         <rect key="frame" x="83" y="325" width="75" height="24"/>
@@ -666,6 +689,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView hidden="YES" contentMode="scaleToFill" id="o0Y-eh-CMY">
+                                <rect key="frame" x="0.0" y="283" width="320" height="197"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hv4-9b-Tp4" id="bxN-M9-9gM"/>
+                                    <outlet property="delegate" destination="hv4-9b-Tp4" id="EWi-vi-wWl"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -677,6 +709,7 @@
                         <outlet property="Button_Regist" destination="w8V-q1-yPi" id="beN-lw-sJS"/>
                         <outlet property="Button_Regist_regist" destination="7eS-pc-8dl" id="hf5-5e-xf6"/>
                         <outlet property="Image_Regist_imageBg" destination="3Mr-tS-rJh" id="d47-qn-5jO"/>
+                        <outlet property="Picker_Work" destination="o0Y-eh-CMY" id="bLb-cp-Hng"/>
                         <outlet property="Text_Age" destination="pRO-OD-amj" id="OLj-AD-4un"/>
                         <outlet property="Text_Pwd" destination="KAu-po-ct8" id="ALv-Om-eds"/>
                         <outlet property="Text_Regist_email" destination="ele-GC-gVj" id="Cbv-UQ-kxf"/>
@@ -688,6 +721,7 @@
                         <outlet property="Text_sex" destination="KgK-zA-xAO" id="AKv-Nr-iMg"/>
                         <outlet property="View_Login" destination="LwY-CW-KyI" id="1qu-GC-CHX"/>
                         <outlet property="View_Regist" destination="Ayl-hV-ygm" id="yDY-vw-FoT"/>
+                        <outlet property="ageView" destination="uGS-aD-Unl" id="W0I-RV-ckA"/>
                         <outlet property="two_ok_Btn" destination="Mlu-Vf-yST" id="8Ar-xV-rKB"/>
                         <outlet property="two_zhuce_Btn" destination="6rp-Nj-o3l" id="f80-xJ-5lB"/>
                         <segue destination="APg-ob-VRm" kind="push" identifier="score" id="TnS-Ea-MC8"/>

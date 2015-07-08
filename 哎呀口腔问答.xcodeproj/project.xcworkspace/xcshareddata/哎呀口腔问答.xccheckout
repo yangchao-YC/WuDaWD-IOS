@@ -7,32 +7,32 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E68B4AB3-442D-43D8-85F5-EFDDEE958D2A</string>
 	<key>IDESourceControlProjectName</key>
-	<string>哎呀口腔问答</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C1EC0810-C2AA-4562-859B-F08716B288C5</key>
+		<key>F539D08DA3D13FC83A1791031C8308CF4353E0F2</key>
 		<string>https://github.com/yangchao-YC/WuDaWD-IOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>哎呀口腔问答.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C1EC0810-C2AA-4562-859B-F08716B288C5</key>
+		<key>F539D08DA3D13FC83A1791031C8308CF4353E0F2</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/yangchao-YC/WuDaWD-IOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C1EC0810-C2AA-4562-859B-F08716B288C5</string>
+	<string>F539D08DA3D13FC83A1791031C8308CF4353E0F2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C1EC0810-C2AA-4562-859B-F08716B288C5</string>
+			<string>F539D08DA3D13FC83A1791031C8308CF4353E0F2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>WuDaWD-IOS</string>
 		</dict>

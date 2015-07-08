@@ -5,7 +5,7 @@
 //
 
 #import <Availability.h>
-
+#import "AFNetworking.h"
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
@@ -25,7 +25,7 @@
 #define INTEGRALS @"&integral="
 
 
-#define DATE_URL @"http://mobile.ycpwh.cn:80/"
+#define DATE_URL @"http://wudawenda.demo.evebit.com/"
 
 
 //登录

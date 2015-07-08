@@ -54,7 +54,7 @@ id           商品id
 
 @property (nonatomic,retain) NSDictionary *articles ;
 @property(nonatomic,strong)ASIHTTPRequest *request;
-
+@property (nonatomic,strong)NSArray *wordArray;
 
 @end
 
@@ -112,6 +112,8 @@ id           商品id
     self.Text_Regist_pwd1.backgroundColor = [UIColor clearColor];
     self.Text_Regist_pwd2.backgroundColor = [UIColor clearColor];
     self.Text_name.backgroundColor = [UIColor clearColor];
+  //  self.Text_name.hidden = YES;
+    
     
     //设置提示文字颜色
     UIColor *color = [UIColor whiteColor];
@@ -134,6 +136,8 @@ id           商品id
     self.Text_Regist_pwd2.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Text_name.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     
+   
+    
     self.Text_Age.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Text_sex.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Text_Word.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
@@ -151,9 +155,44 @@ id           商品id
     self.Button_Regist.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Button_Regist_regist.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     
+    //点击键盘外区域关闭键盘
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapRecognizer];
     
     
+    NSArray *wordArray = [[NSArray alloc]initWithObjects:@"小学生",@"初中生",@"大学生",@"研究生",@"服务业",@"企业",@"公务员/事业单位",@"医疗卫生",@"教育",@"其他", nil];
+    self.wordArray = wordArray;
     
+    
+}
+
+//关闭键盘
+- (void) handleBackgroundTap:(UITapGestureRecognizer*)sender
+{
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+}
+
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [self.wordArray count];
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [self.wordArray objectAtIndex:row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.Text_Word.text = [self.wordArray objectAtIndex:row];
+    self.Picker_Work.hidden = YES;
 }
 
 /*
@@ -161,6 +200,9 @@ id           商品id
     2:注册新用户
     3:立即注册
     4:确定（找回密码）
+    9:注册信息登陆
+    7:性别
+    8:职业
  */
 
 -(IBAction)BtnClick:(UIButton *)sender
@@ -181,14 +223,95 @@ id           商品id
         case 4:
             [self ClickPwd];
             break;
+        case 7:
+            [self dialogSex];
+            break;
+        case 8:
+            self.Picker_Work.hidden = NO;
+            break;
+        case 9:
+            [self messageDate];
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)dialogSex
+{
+    UIActionSheet *chooseImageSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"男",@"女", nil];
+    [chooseImageSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            self.Text_sex.text = @"男";
+            break;
+        case 1:
+            self.Text_sex.text = @"女";
+            break;
         default:
             break;
     }
 }
 
 
+-(void)messageDate
+{
+    status = 9;
+    NSString *age;
+    NSString *sex;
+    NSString *work;
+    
+    age = [self.Text_Age.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    sex = [self.Text_sex.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    work = [self.Text_Word.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (age.length == 0 || sex.length == 0 || work.length == 0) {
+        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"信息不能为空" content:nil key:2];
+        alertView.clickDelegate = self;
+        [alertView show];
+    }
+    else
+    {
+        NSString *date ;
+        if ([sex isEqualToString:@"男"]) {
+            sex = @"1";
+        }
+        else{
+            sex = @"2";
+        }
+        date = [NSString stringWithFormat:@"%@%@&old=%@&position=%@&lang=en",MESSAGE,sex,age,work];
+        
+        NSLog(@"%@",date);
+        
+        date = [date stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *dateURL = [NSURL URLWithString:date];
+        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:dateURL];
+        request.delegate = self;
+        [request startAsynchronous];
+        
+        
+        
+        /*
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        
+      //  manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        
+        [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"JSON: %@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];*/
+    }
+    
+}
+
+
 /*数据交互
- key:值为------   1：进行登录。2：注册。3：找回密码
+ key:值为------   1：进行登录。2：找回密码。3：注册    9：注册信息
  name:用户名
  pwd:密码
  email:邮箱
@@ -197,9 +320,6 @@ id           商品id
 
 -(void)date:(int)key Name:(NSString *)name Pwd:(NSString *)password  Email:(NSString *)email
 {
-    
-    
-    
     NSString *date ;
     status = key;//区分
    
@@ -247,23 +367,24 @@ id           商品id
 {
     [self removeHUDInfo];
     
-    
-    
    // NSDictionary *article = [self.articles objectAtIndex:0];
     NSString *errorid = [NSString stringWithFormat:@"%@",[self.articles objectForKey:@"errorid"]];
-    NSLog(@"我是返回值--- %@ ---",errorid);
     if ([errorid isEqualToString:@"1"]) {
         AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
-        NSLog(@"---login---   %@   ---",self.Text_name.text);
         myDelegate.userLogin = self.Text_name.text;
-        if (self.totleScore == NULL) {
-           [self pushView];
-            
+        if (status == 3) {
+            [self Message];
         }
-        else//返回积分页面
+        else
         {
-            check = true;
-            [self scorePush];
+            if (self.totleScore == NULL) {
+                [self pushView];
+            }
+            else//返回积分页面
+            {
+                check = true;
+                [self scorePush];
+            }
         }
     }
     else
@@ -276,6 +397,24 @@ id           商品id
     }
     
 }
+
+//注册信息
+-(void)Message
+{
+    self.View_Login.hidden = YES;
+    self.View_Regist.hidden = NO;
+    Lable_ForgetPwd.hidden = YES;
+    ForgetPwdBtn.hidden = YES;
+    self.Text_name.hidden = YES;
+    self.View_Login.hidden = YES;
+    self.View_Regist.hidden = YES;
+    self.ageView.hidden = NO;
+    
+    
+    
+    
+}
+
 
 
 -(void)scorePush
@@ -466,6 +605,32 @@ id           商品id
     
     [UIView commitAnimations];
 }
+
+
+
+//设置用户名只能输入数字并且不能大于11位字符长度
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    
+    // Check for non-numeric characters
+    if (textField == self.Text_Age) {
+        NSUInteger lengthOfString = string.length;
+        for (NSInteger loopIndex = 0; loopIndex < lengthOfString; loopIndex++) {//只允许数字输入
+            unichar character = [string characterAtIndex:loopIndex];
+            if (character < 48) return NO; // 48 unichar for 0
+            if (character > 57) return NO; // 57 unichar for 9
+        }
+        // Check for total length
+        NSUInteger proposedNewLength = textField.text.length - range.length + string.length;
+        if (proposedNewLength > 3) return NO;//限制长度
+        return YES;
+    }
+    else
+    {
+        return YES;
+    }
+}
+
 
 
 //当用户按下return键或者按回车键，键盘消失

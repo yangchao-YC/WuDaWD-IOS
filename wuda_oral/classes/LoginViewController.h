@@ -10,7 +10,7 @@
 #import "RTLabel.h"
 #import "CustomAlertView.h"
 #import "ASIHTTPRequest.h"
-@interface LoginViewController : UIViewController<UITextFieldDelegate,CustomAlertViewDelegate,ASIHTTPRequestDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate,CustomAlertViewDelegate,ASIHTTPRequestDelegate,UIActionSheetDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 {
     IBOutlet RTLabel *Lable_ForgetPwd;
     IBOutlet UIButton *ForgetPwdBtn;
@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *Image_Regist_imageBg;//注册背景与找回密码背景图片
 @property (weak, nonatomic) IBOutlet UIButton *Button_Pwd;//找回密码确定按钮
 @property (strong, nonatomic) NSNumber *totleScore;
+@property (weak, nonatomic) IBOutlet UIPickerView *Picker_Work;
 
 @property (weak, nonatomic) IBOutlet UITextField *Text_Age;
 @property (weak, nonatomic) IBOutlet UITextField *Text_sex;
@@ -44,6 +45,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *two_zhuce_Btn;
 @property (weak, nonatomic) IBOutlet UIButton *two_ok_Btn;
 
+@property (weak, nonatomic) IBOutlet UIView *ageView;
 
 
 @end
