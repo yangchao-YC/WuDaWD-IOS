@@ -52,6 +52,8 @@
 //积分兑换
 #define REDEEM [DATE_URL stringByAppendingString:@"index.php?option=com_content&prize=on"]
 
+//获取个人信息
+#define GETMESSAGE [DATE_URL stringByAppendingString:@"index.php?option=com_content&udata=1&username="]
 
 //注册信息
 #define MESSAGE [DATE_URL stringByAppendingString:@"index.php?option=com_content&ttrue=4&sex="]

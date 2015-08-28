@@ -46,6 +46,7 @@ id           商品id
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "UIViewController+HUD.h"
+#import "MyASIHTTPRequest.h"
 @interface LoginViewController ()
 {
     int status ;  //区分是登录，注册，找回密码
@@ -164,6 +165,41 @@ id           商品id
     NSArray *wordArray = [[NSArray alloc]initWithObjects:@"小学生",@"初中生",@"大学生",@"研究生",@"服务业",@"企业",@"公务员/事业单位",@"医疗卫生",@"教育",@"其他", nil];
     self.wordArray = wordArray;
     
+    self.Label_UserName.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    self.Label_Age.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    self.Label_Email.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    self.Label_Sex.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    self.Label_Word.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    self.Btn_Cut.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    
+    NSString *userName = [user stringForKey:@"user"];
+    
+    if(userName.length !=0)//上次登陆成功则将登录框信息填充
+    {
+        Lable_ForgetPwd.hidden = YES;
+        self.View_Login.hidden = YES;
+        self.View_My.hidden = NO;
+        
+        self.Label_UserName.text = [NSString stringWithFormat:@"用户名:%@",userName];
+        
+        
+       NSString *date = [NSString stringWithFormat:@"%@%@&lang=en",GETMESSAGE,userName];
+        
+        NSLog(@"%@",date);
+        
+        date = [date stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSURL *dateURL = [NSURL URLWithString:date];
+        MyASIHTTPRequest *request = [MyASIHTTPRequest requestWithURL:dateURL];
+        request.key = 2;
+        request.delegate = self;
+        [request startAsynchronous];
+        
+    }
+    
+    
+    
     
 }
 
@@ -203,6 +239,7 @@ id           商品id
     9:注册信息登陆
     7:性别
     8:职业
+    5:切换账号
  */
 
 -(IBAction)BtnClick:(UIButton *)sender
@@ -231,6 +268,11 @@ id           商品id
             break;
         case 9:
             [self messageDate];
+            break;
+        case 5:
+            self.View_My.hidden = YES;
+            self.View_Login.hidden = NO;
+            Lable_ForgetPwd.hidden = NO;
             break;
         default:
             break;
@@ -283,13 +325,19 @@ id           商品id
         else{
             sex = @"2";
         }
-        date = [NSString stringWithFormat:@"%@%@&old=%@&position=%@&lang=en",MESSAGE,sex,age,work];
         
-        NSLog(@"%@",date);
+        AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+        
+        date = [NSString stringWithFormat:@"%@%@&old=%@&position=%@%@%@&lang=en",MESSAGE,sex,age,work,USERNAME,myDelegate.userLogin];
+        
+        
+        
+        NSLog(@"我是注册资料：%@",date);
         
         date = [date stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *dateURL = [NSURL URLWithString:date];
-        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:dateURL];
+        MyASIHTTPRequest *request = [MyASIHTTPRequest requestWithURL:dateURL];
+        request.key = 3;
         request.delegate = self;
         [request startAsynchronous];
         
@@ -338,7 +386,8 @@ id           商品id
     }
     date = [date stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *dateURL = [NSURL URLWithString:date];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:dateURL];
+    MyASIHTTPRequest *request = [MyASIHTTPRequest requestWithURL:dateURL];
+    request.key = 1;
     request.delegate = self;
     [request startAsynchronous];
 }
@@ -348,8 +397,32 @@ id           商品id
     NSError *error;
     id rs = [NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:&error];
     
-    self.articles = rs;
-    [self dateEND];
+    
+    MyASIHTTPRequest *MyASI = (MyASIHTTPRequest *) request;
+    if (MyASI.key == 1) {
+        self.articles = rs;
+        [self dateEND];
+    }
+    else if(MyASI.key == 2)
+    {
+        self.articles = rs;
+        [self showMessage];
+    }
+    
+}
+-(void)showMessage
+{
+    self.Label_Age.text = [NSString stringWithFormat:@" 年龄:%@",[self.articles objectForKey:@"old"]];
+    self.Label_Email.text = [NSString stringWithFormat:@" 邮箱:%@",[self.articles objectForKey:@"email"]];
+    
+    if ([[self.articles objectForKey:@"sex"] isEqual:@"1"]) {
+        self.Label_Sex.text = @" 性别:男";
+    }
+    else
+    {
+        self.Label_Sex.text = @" 性别:女";
+    }
+    self.Label_Word.text = [NSString stringWithFormat:@" 职业:%@",[self.articles objectForKey:@"position"]];
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request
@@ -369,6 +442,11 @@ id           商品id
     
     NSString *errorid = [NSString stringWithFormat:@"%@",[self.articles objectForKey:@"errorid"]];
     if ([errorid isEqualToString:@"1"]) {
+        
+        
+        NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+        [user setObject:self.Text_name.text forKey:@"user"];//存储账号到本地
+        
         AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
         myDelegate.userLogin = self.Text_name.text;
         if (status == 3) {
@@ -478,7 +556,7 @@ id           商品id
     
     if (Registname.length == 0 || Registpwd.length == 0 || RegistPwdTwo.length == 0 || RegistEmail.length == 0 )
     {
-        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"信息不能为空" content:nil key:2];
+        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"信息不能为空" content:nil key:3];
         alertView.clickDelegate = self;
         [alertView show];
     }
@@ -529,7 +607,7 @@ id           商品id
     
     if (Pwdname.length == 0 || Pwdpwd.length == 0 || PwdPwdTwo.length == 0 || PwdEmail.length == 0 )
     {
-        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"信息不能为空" content:nil key:2];
+        CustomAlertView *alertView = [[CustomAlertView alloc]initWithView:self.view title:@"信息不能为空" content:nil key:3];
         alertView.clickDelegate = self;
         [alertView show];
     }

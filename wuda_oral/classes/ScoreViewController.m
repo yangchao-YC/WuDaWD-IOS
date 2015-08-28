@@ -91,8 +91,13 @@
     if (IS_IPHONE_5) {
         self.scoreScrollView.frame = CGRectMake(0, 30, 320, 385);
     }
-    AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
-    userName = myDelegate.userLogin;
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    
+    userName = [user stringForKey:@"user"];
+    
+    //AppDelegate *myDelegate = [[UIApplication sharedApplication]delegate];
+    //userName = myDelegate.userLogin;
     
     [self UserLogin];
     

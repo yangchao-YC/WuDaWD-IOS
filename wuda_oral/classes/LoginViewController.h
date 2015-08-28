@@ -47,5 +47,13 @@
 
 @property (weak, nonatomic) IBOutlet UIView *ageView;
 
+@property (weak, nonatomic) IBOutlet UIView *View_My;
+
+@property (weak, nonatomic) IBOutlet UILabel *Label_UserName;
+@property (weak, nonatomic) IBOutlet UILabel *Label_Age;
+@property (weak, nonatomic) IBOutlet UILabel *Label_Sex;
+@property (weak, nonatomic) IBOutlet UILabel *Label_Word;
+@property (weak, nonatomic) IBOutlet UILabel *Label_Email;
+@property (weak, nonatomic) IBOutlet UIButton *Btn_Cut;//切换按钮
 
 @end
