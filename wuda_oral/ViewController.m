@@ -31,6 +31,18 @@
     self.btn_start.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:16.0f];
     self.Button_Push_Login.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.Button_Push_Pints.titleLabel.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    
+    NSString *userName = [user stringForKey:@"user"];
+    
+    if(userName.length !=0)//上次登陆成功则将登录框信息填充
+    {
+        [self.Button_Push_Login setTitle:@"个人中心" forState:UIControlStateNormal];
+    }
+    
+    
+    
 }
 
 - (void)initDB
