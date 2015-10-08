@@ -24,7 +24,7 @@
 
    // [UMSocialWechatHandler setWXAppId:@"wxd9a39c7122aa6516" url:@"http://www.whuss.com/"];
     
-    [UMSocialWechatHandler setWXAppId:@"wxd9a39c7122aa6516" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.whuss.com/"];
+    [UMSocialWechatHandler setWXAppId:@"wx4f9b4f89d241741a" appSecret:@"0fb57f6d2b9547d1396cf8cfcddb87f2" url:@"http://www.whuss.com/"];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
