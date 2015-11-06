@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F539D08DA3D13FC83A1791031C8308CF4353E0F2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "dd1a09fc-ef92-4cb1-bfd4-b82f983d8e4b++2782" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F539D08DA3D13FC83A1791031C8308CF4353E0F2" : 0,
+    "dd1a09fc-ef92-4cb1-bfd4-b82f983d8e4b++2782" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E68B4AB3-442D-43D8-85F5-EFDDEE958D2A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F539D08DA3D13FC83A1791031C8308CF4353E0F2" : "WuDaWD-IOS",
+    "dd1a09fc-ef92-4cb1-bfd4-b82f983d8e4b++2782" : "WuDaWD-IOS\/wuda_oral\/lib\/DB\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "哎呀口腔问答",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "哎呀口腔问答.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yangchao-YC\/WuDaWD-IOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F539D08DA3D13FC83A1791031C8308CF4353E0F2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/svnchina.com\/svn\/appiphone",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "dd1a09fc-ef92-4cb1-bfd4-b82f983d8e4b++2782"
+    }
+  ]
+}

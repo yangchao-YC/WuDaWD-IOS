@@ -146,6 +146,8 @@ id           商品id
     self.two_ok_Btn.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     self.two_zhuce_Btn.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
     
+    self.Btn_jump.font = [UIFont fontWithName:@"DFPHaiBaoW12" size:13.0f];
+    
     self.Text_Age.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"年龄" attributes:@{NSForegroundColorAttributeName: color}];
     self.Text_sex.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"性别" attributes:@{NSForegroundColorAttributeName: color}];
     self.Text_Word.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"职业" attributes:@{NSForegroundColorAttributeName: color}];
@@ -273,6 +275,9 @@ id           商品id
             self.View_My.hidden = YES;
             self.View_Login.hidden = NO;
             Lable_ForgetPwd.hidden = NO;
+            break;
+        case 10:
+            [self pushView];
             break;
         default:
             break;

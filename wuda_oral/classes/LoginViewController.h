@@ -18,6 +18,7 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UIButton *Btn_jump;
 
 @property (weak, nonatomic) IBOutlet UITextField *Text_name;//登录用户名输入
 @property (weak, nonatomic) IBOutlet UITextField *Text_Pwd;//登录密码输入框
